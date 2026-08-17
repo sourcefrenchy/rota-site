@@ -54,13 +54,6 @@ a shipped binary.
    `grep -n '\[licensor\|\[governing' docs/terms/index.html` finds them.
 2. **`docs/privacy/index.html`** has one placeholder in the Contact section for the
    controller name and postal address.
-3. **The `rota.app` domain must actually be yours**, with working mailboxes for
-   `support@`, `privacy@`, `legal@`, `press@` and `corrections@`. `corrections@rota.app`
-   is a compiled-in constant in the app
-   (`Packages/RotaFeatures/Sources/RotaFeatureWatchPage/Logic/CorrectionReport.swift`) and
-   `support@` is the address App Store Connect will list. If the domain is not yours,
-   change the addresses here **and** in that Swift file in the same commit — a support URL
-   whose email bounces is a 1.5 rejection.
 
 ## Publishing
 
