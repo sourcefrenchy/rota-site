@@ -1214,3 +1214,43 @@ section:has(> .section-up) { position: relative; }
   .section-up { transition: opacity 180ms ease; }
   .section-up:hover, .section-up:focus-visible { transform: none; }
 }
+
+/* Section-up arrows, made visible.
+
+   At 55% opacity on a hairline border they read as a rendering artefact rather
+   than a control — you have to already know they are there. They now carry the
+   accent gold, a tinted ground and a heavier stroke, so they are legible at rest
+   and obviously clickable. */
+
+.section-up {
+  width: 2.4rem;
+  height: 2.4rem;
+  opacity: 1;
+  color: var(--accent);
+  background: color-mix(in oklab, var(--accent-orn) 14%, transparent);
+  border: 1.5px solid color-mix(in oklab, var(--accent-orn) 55%, transparent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+}
+.section-up svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  stroke-width: 2.2;
+}
+.section-up:hover,
+.section-up:focus-visible {
+  color: var(--ground);
+  background: var(--accent-orn);
+  border-color: var(--accent-orn);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+@media (prefers-color-scheme: dark) {
+  .section-up {
+    background: color-mix(in oklab, var(--accent-orn) 20%, transparent);
+    border-color: color-mix(in oklab, var(--accent-orn) 70%, transparent);
+  }
+}
+@media (max-width: 34rem) {
+  .section-up { width: 2.1rem; height: 2.1rem; }
+  .section-up svg { width: 1rem; height: 1rem; }
+}
