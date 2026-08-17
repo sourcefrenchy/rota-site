@@ -886,7 +886,10 @@ section { padding-block: clamp(2.75rem, 7vw, 5rem); }
 @media (max-width: 56rem)          { .guilloche-bg { width: 240vw; opacity: 0.22; } }
 
 /* Content rides above the backdrop. */
-.masthead, main, .foot { position: relative; z-index: 1; }
+/* Content rides above the backdrop. The masthead is deliberately NOT in this
+   list: it is `position: sticky`, and re-declaring it `relative` here silently
+   unstuck it — the header scrolled away and the guilloché rule got the blame. */
+main, .foot { position: relative; z-index: 1; }
 
 @media (prefers-reduced-motion: no-preference) {
   .guilloche-bg { animation: guilloche-turn 240s linear infinite; }
@@ -1027,3 +1030,34 @@ section { padding-block: clamp(2.75rem, 7vw, 5rem); }
 
 /* The overview keeps its measure for running text, since it has grids and cards
    alongside to carry the width. */
+
+/* ---------------------------------------------------------------------------
+   Sticky masthead — declared last so nothing later can unstick it again.
+
+   The nav is the only way between five pages, so it stays reachable at any
+   scroll position. It gains a hairline and a stronger blur once the page has
+   moved, which separates it from content without drawing a border at rest.
+--------------------------------------------------------------------------- */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in oklab, var(--ground) 86%, transparent);
+  backdrop-filter: saturate(170%) blur(16px);
+  -webkit-backdrop-filter: saturate(170%) blur(16px);
+  border-bottom: 1px solid color-mix(in oklab, var(--hairline) 70%, transparent);
+}
+
+/* Anchor jumps must not land under the sticky bar. */
+:root { scroll-padding-top: 5.5rem; }
+[id] { scroll-margin-top: 5.5rem; }
+
+/* On very short viewports a sticky header costs more than it gives. */
+@media (max-height: 26rem) {
+  .masthead { position: static; }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .masthead { background: var(--ground); }
+}
