@@ -780,8 +780,9 @@ section { padding-block: clamp(2.75rem, 7vw, 5rem); }
 }
 .wordmark {
   font-family: var(--serif);
-  font-size: 1.22rem; font-weight: 600;
-  letter-spacing: 0.2em; text-indent: 0.2em;   /* tracking without a ragged right */
+  font-size: clamp(1.5rem, 1.25rem + 0.9vw, 1.95rem);
+  font-weight: 600;
+  letter-spacing: 0.22em; text-indent: 0.22em;  /* tracking without a ragged right */
   text-decoration: none; color: var(--text);
 }
 .nav { display: flex; gap: clamp(0.9rem, 2.2vw, 1.9rem); align-items: center; flex-wrap: wrap; }
@@ -898,4 +899,18 @@ section { padding-block: clamp(2.75rem, 7vw, 5rem); }
   color: var(--text-2);
   opacity: 0.7;
   letter-spacing: 0.01em;
+}
+
+/* Dial lettering. The numerals are set in the serif at a size that stays legible
+   when the whole dial is at 30% opacity — smaller and they turn to mush. */
+.dial-romans text {
+  font-family: var(--serif);
+  font-size: 21px; font-weight: 500;
+  letter-spacing: 0.04em;
+  text-anchor: middle; dominant-baseline: central;
+}
+.dial-subs text {
+  font-family: var(--serif);
+  font-size: 9.5px;
+  text-anchor: middle; dominant-baseline: central;
 }
