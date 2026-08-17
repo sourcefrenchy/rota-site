@@ -7,7 +7,7 @@
 <meta name="description" content="ROTA has no servers, no accounts, and no analytics — we never receive your data. Three things do leave your phone, and this page names all three.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0E1512">
-<link rel="stylesheet" href="../assets/rota.css?v=20260817213244">
+<link rel="stylesheet" href="../assets/rota.css?v=20260817213501">
 </head>
 <body>
 <div class="backdrop" aria-hidden="true">
@@ -63,20 +63,15 @@
     check it.</p>
 
   <p>Note what the sentence does <em>not</em> say. It does not say that nothing leaves your
-    phone, because that would not be true, and this is an audience that will point a proxy
-    at the app and find out. It says that nothing reaches <strong>us</strong> — which is
-    true, is the stronger claim, and is exactly what the App Store's
+    phone, because that would not be true. It says that nothing reaches <strong>us</strong>
+    — the stronger claim, and exactly what the App Store's
     <strong>Data Not Collected</strong> label means.</p>
 
-  <p>There is no ROTA account, because there is no ROTA server to hold one. There is no
-    advertising identifier, no attribution framework, and nothing in ROTA sends anything to
-    us, because there is nowhere for it to send anything to.</p>
-
-  <p>App Store privacy label: Data Not Collected.</p>
+  <p>There is no ROTA account, because there is no ROTA server to hold one. No advertising
+    identifier, no attribution framework, and nowhere for anything to be sent.</p>
 
   <p>No third-party SDKs are linked into ROTA — not one, not for analytics, not for the
-    paywall. That is what makes the sentence above literally true rather than merely
-    intended.</p>
+    paywall.</p>
 
   <nav class="toc" aria-labelledby="toc-h">
     <h2 id="toc-h">On this page</h2>
@@ -97,8 +92,7 @@
 
   <a class="section-up" href="#toc-h" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="egress">What leaves this phone</h2>
-  <p>Three things do leave, and you should know all three by name. Nothing else does, and
-    nothing at all comes to us.</p>
+  <p>Three things do leave, and you should know all three by name. Nothing else does.</p>
 
   <figure class="diagram diagram-egress">
     <svg viewBox="0 0 720 330" role="img" aria-labelledby="eg-t eg-d">
@@ -137,8 +131,7 @@
           <text x="84" y="22">Nothing → ROTA</text></g>
       </g>
     </svg>
-    <figcaption>We operate no servers, so there is no fourth arrow. The dashed path is the
-      one that does not exist.</figcaption>
+    <figcaption>We operate no servers, so there is no fourth arrow.</figcaption>
   </figure>
 
 </div>
@@ -154,11 +147,11 @@
         <dt>What is sent</dt>
         <dd>A coarse location — roughly your neighbourhood, never your address — each time
           ROTA reads the weather. iOS is asked for reduced accuracy at the system level, so
-          a precise fix is never requested and never received.</dd>
+          a precise fix is never requested.</dd>
         <dt>Why</dt>
         <dd>Rain rests your leather straps and 28° favours a bracelet. Turn the weather
-          assist off in Assists and this stops entirely. The rotation engine renormalises
-          without the weather axis and keeps working.</dd>
+          assist off in Assists and this stops entirely; the rotation renormalises without
+          it.</dd>
         <dt>Who holds it</dt>
         <dd>Apple, under <a href="https://www.apple.com/legal/privacy/data/en/weather/">Apple
           Weather's own privacy terms</a>. We are never told your location, and ROTA never
@@ -177,13 +170,13 @@
         <dd>Everything you enter: watches, photographs, straps, wear history, notes, serials
           and prices.</dd>
         <dt>Why</dt>
-        <dd>It is how your iPhone and iPad show the same collection. It is your storage,
-          under your Apple Account — we have no key and no copy. Sign out of iCloud and ROTA
-          keeps working, on this device only.</dd>
+        <dd>It is how your iPhone and iPad show the same collection — your storage, under
+          your Apple Account; we have no key and no copy. Sign out and ROTA keeps working on
+          this device.</dd>
         <dt>Who holds it</dt>
         <dd>You do. CloudKit's private database is readable only by the signed-in Apple
-          Account. There is no public database, no shared database, and no server-side code
-          of ours anywhere in the system. We could not read it if we wanted to.</dd>
+          Account. There is no public or shared database and no server-side code of ours. We
+          could not read it if we wanted to.</dd>
       </dl>
     </div>
 
@@ -196,14 +189,13 @@
         <dt>What is sent</dt>
         <dd>Their server sees your device's IP address and the fact that a feed was fetched.
           It is not told which watches you own; matching headlines to your collection happens
-          here, on the device.</dd>
+          on the device.</dd>
         <dt>Why</dt>
-        <dd>It is how the Journal has anything in it. Switch a feed off in Journal and
-          nothing is requested from that publisher again.</dd>
+        <dd>It is how the Journal has anything in it. Switch a feed off and nothing is
+          requested from that publisher again.</dd>
         <dt>Who holds it</dt>
-        <dd>The publisher, under their own privacy policy — the same as if you had opened
-          their site in Safari. Tapping a headline opens the publisher's own page in a Safari
-          view, at which point their site sees you the way any website does.</dd>
+        <dd>The publisher, under their own privacy policy — the same as opening their site
+          in Safari. Tapping a headline opens the publisher's page in a Safari view.</dd>
       </dl>
     </div>
 
@@ -214,17 +206,16 @@
 
   <a class="section-up" href="#egress" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="apple">Two more things, named for completeness</h2>
-  <p>Neither of these is ROTA sending your data anywhere. Both are the operating system and
-    the App Store doing what they do for every app on your phone. We name them anyway,
-    because a policy that quietly omits the awkward items is not worth reading.</p>
+  <p>Neither is ROTA sending your data anywhere; both are the operating system and the App
+    Store doing what they do for every app. We name them anyway, because a policy that omits
+    the awkward items is not worth reading.</p>
 
   <h3>Purchases</h3>
   <p>If you buy ROTA Pro, Apple handles the entire transaction. We never see your name, your
     payment details, your address or your Apple Account. StoreKit tells the app one thing —
-    whether an entitlement is currently active — and that answer is cached on the device so
-    the app knows you are Pro even when offline. App Store Connect later shows us aggregate
-    sales figures by country, the same report every developer on the store receives; it
-    contains no identity and nothing about your collection.</p>
+    whether an entitlement is active — cached on the device so the app knows you are Pro
+    offline. App Store Connect later shows us aggregate sales figures by country, the report
+    every developer receives; it contains no identity and nothing about your collection.</p>
 
   <h3>Crash reports, only if you have opted in</h3>
   <p>iOS has a system setting, <em>Settings → Privacy &amp; Security → Analytics &amp;
@@ -232,33 +223,29 @@
     the anonymised crash and energy reports it shows developers in App Store Connect. Those
     reports are a stack trace, an OS version and a device model. They contain nothing you
     typed, no photographs, no collection data and no identifier that points at you. We do
-    not operate that pipeline, we cannot switch it on for you, and you can switch it off for
-    every app in that same setting. It is the one channel through which any information
-    connected to ROTA can reach us at all, and it carries none of your data.</p>
+    not operate that pipeline, and you can switch it off for every app in that same
+    setting.</p>
 
   <a class="section-up" href="#apple" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="stays">What stays in the app</h2>
-  <p>Some things are worth stating explicitly because they are the things collectors worry
-    about.</p>
+  <p>Worth stating explicitly, because these are the things collectors worry about.</p>
   <ul>
     <li><strong>Serial numbers and prices stay in the app.</strong> They are excluded from
-      the PDF lookbook unless you switch them on at export time, and they are never part of
-      a share card.</li>
+      the PDF lookbook unless you switch them on at export, and never appear on a share
+      card.</li>
     <li><strong>Photographs</strong> live in the app's own storage and in your private
-      iCloud. They are never uploaded anywhere else, never used for anything, and never
-      analysed off the device.</li>
+      iCloud. They are never uploaded anywhere else and never analysed off the device.</li>
     <li><strong>Calendar events</strong>, if you enable the calendar assist, are read on the
-      device to suggest a day type and are never stored, never synced and never transmitted.
-      The assist is off unless you turn it on.</li>
-    <li><strong>Headline matching</strong> — deciding that an article is about a watch you
-      own — happens entirely on the device against the text of the feed. The publisher is
-      never told what you own.</li>
+      device to suggest a day type and are never stored, synced or transmitted. The assist
+      is off unless you turn it on.</li>
+    <li><strong>Headline matching</strong> — deciding an article is about a watch you own —
+      happens on the device, against the text of the feed. The publisher is never told what
+      you own.</li>
     <li>&ldquo;Report a correction&rdquo; opens your mail app with the catalog row and the
       app version, and nothing else: no photographs, no collection, no identifiers. You see
-      the message before you send it, and you can edit or discard it.</li>
+      the message before you send it.</li>
     <li><strong>The reference catalog</strong> is bundled inside the app. Looking up a
-      reference number never contacts a server; validation is performed on the device
-      against rules shipped in the binary.</li>
+      reference number never contacts a server; validation runs on the device.</li>
   </ul>
 
   <a class="section-up" href="#stays" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
@@ -421,7 +408,7 @@
     <p>This site sets no cookies, runs no scripts and carries no analytics.</p>
     <p>© 2026 ROTA. All rights reserved.</p>
   </div>
-  <p class="buildstamp"><span class="mono">built 2026-08-17 21:32 UTC</span></p>
+  <p class="buildstamp"><span class="mono">built 2026-08-17 21:35 UTC</span></p>
 </footer>
 
 </body>

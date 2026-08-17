@@ -1299,3 +1299,16 @@ section > .section-up { inset-inline-end: 0; }
 @media (max-width: 34rem) {
   :root { --page-inset: 1.1rem; }
 }
+
+/* Section arrows: clear of the scrollbar.
+
+   `inset-inline-end: 0` pinned them to the viewport edge, so on a desktop they
+   sat directly against the scrollbar. They now align with the content column's
+   own right edge — the same inset the text uses — which also means they move
+   with the column instead of drifting as the window widens. */
+section > .section-up {
+  inset-inline-end: max(var(--page-inset), calc((100% - var(--wide)) / 2));
+}
+@media (max-width: 34rem) {
+  section > .section-up { inset-inline-end: var(--page-inset); }
+}
