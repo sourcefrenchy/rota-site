@@ -657,3 +657,10 @@ td.no { color: var(--text-2); }
 @media (prefers-reduced-motion: no-preference) {
   .device { transition: box-shadow 220ms ease; }
 }
+
+/* One product, so the pricing grid is a single centred plate rather than a
+   three-across comparison. A lone card in a 3-column grid reads as two missing
+   options, which is the opposite of the message. */
+.grid-single { grid-template-columns: minmax(0, 26rem); justify-content: center; }
+.card-price { text-align: center; }
+.card-price .price { font-size: clamp(2.25rem, 6vw, 3rem); }
