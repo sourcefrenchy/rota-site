@@ -66,11 +66,11 @@ a shipped binary.
 
 ```bash
 # 1 · Create the public repo (once).
-gh repo create jmamblat/rota-site --public \
+gh repo create sourcefrenchy/rota-site --public \
   --description "Marketing and support site for ROTA — Watch Collection"
 
 # 2 · Populate it from this directory's contents.
-cd /tmp && rm -rf rota-site && git clone git@github.com:jmamblat/rota-site.git
+cd /tmp && rm -rf rota-site && git clone git@github.com:sourcefrenchy/rota-site.git
 cp -R /path/to/Rota/Site/docs /path/to/Rota/Site/README.md /tmp/rota-site/
 cd /tmp/rota-site
 git add -A
@@ -79,7 +79,7 @@ git push
 
 # 3 · Turn Pages on (once): Settings → Pages → Source: "Deploy from a branch",
 #     Branch: main, Folder: /docs. Or:
-gh api -X POST repos/jmamblat/rota-site/pages \
+gh api -X POST repos/sourcefrenchy/rota-site/pages \
   -f 'source[branch]=main' -f 'source[path]=/docs'
 ```
 

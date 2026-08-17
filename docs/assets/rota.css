@@ -984,3 +984,46 @@ section { padding-block: clamp(2.75rem, 7vw, 5rem); }
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
+
+/* ---------------------------------------------------------------------------
+   Interior pages: fill the column, don't ribbon it.
+
+   The previous fix widened the container to 74rem but still held every paragraph
+   to a 40rem measure. On the overview that reads fine, because cards, plans and
+   diagrams fill the remaining width. On privacy, terms, support and press there
+   is nothing *but* running text, so the result was a narrow strip of prose sitting
+   in a wide empty container — which is what "compressed" describes.
+
+   So prose pages get their own column: narrower than the overview's, and the text
+   fills it edge to edge instead of stopping halfway. Tables and figures still break
+   out wider, which is what gives the page its rhythm.
+--------------------------------------------------------------------------- */
+
+.wrap.prose {
+  max-width: 62rem;
+}
+
+/* Inside a prose page the measure is the column, not a further inset. */
+.wrap.prose > p,
+.wrap.prose > ul,
+.wrap.prose > ol,
+.wrap.prose > blockquote,
+.wrap.prose > .lede,
+.wrap.prose > h1,
+.wrap.prose > h2,
+.wrap.prose > h3 {
+  max-width: none;
+}
+
+/* Structural blocks may exceed the reading column for emphasis. */
+.wrap.prose > .table-scroll,
+.wrap.prose > figure,
+.wrap.prose > .diagram,
+.wrap.prose > .egress,
+.wrap.prose > .grid {
+  width: min(74rem, 100%);
+  margin-inline: calc((100% - min(74rem, 100%)) / 2);
+}
+
+/* The overview keeps its measure for running text, since it has grids and cards
+   alongside to carry the width. */
