@@ -1107,3 +1107,46 @@ body { padding-block-start: var(--masthead-h, 4.4rem); }
 }
 
 .buildstamp { text-align: center; }
+
+/* ---------------------------------------------------------------------------
+   Build stamp: a fixed footer rail.
+
+   Same reasoning as the masthead — `fixed` rather than `sticky`, because sticky
+   is defeated by any ancestor with a transform, filter or non-visible overflow,
+   and this page has all three. The rail is deliberately thin and quiet: it exists
+   so you can tell at a glance which build you are looking at, not to decorate.
+--------------------------------------------------------------------------- */
+
+.buildstamp {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: 45;
+  margin: 0;
+  padding-block: 0.5rem;
+  text-align: center;
+  font: 400 0.68rem/1.4 var(--mono);
+  letter-spacing: 0.02em;
+  color: var(--text-2);
+  background: color-mix(in oklab, var(--ground) 88%, transparent);
+  backdrop-filter: saturate(170%) blur(14px);
+  -webkit-backdrop-filter: saturate(170%) blur(14px);
+  border-top: 1px solid color-mix(in oklab, var(--hairline) 70%, transparent);
+  opacity: 1;
+}
+
+/* Reserve its height so the real footer's last line is never underneath it. */
+:root { --buildrail-h: 2.1rem; }
+body { padding-block-end: var(--buildrail-h); }
+
+/* The backdrop is pinned to the viewport and must not inherit that padding. */
+.backdrop { bottom: 0; }
+
+@media (max-height: 26rem) {
+  .buildstamp { position: static; border-top: 0; }
+  body { padding-block-end: 0; }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .buildstamp { background: var(--ground); }
+}
