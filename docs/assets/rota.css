@@ -757,3 +757,99 @@ section { padding-block: clamp(2.75rem, 7vw, 5rem); }
   padding: 0.34rem 0.7rem; border-radius: 999px; white-space: nowrap;
 }
 .card-featured { border-color: var(--accent-orn); }
+
+/* ---------------------------------------------------------------------------
+   Masthead, hero and the guilloché.
+
+   The page previously showed "ROTA" twice — wordmark in the masthead, again as
+   the h1 — which read as a mistake rather than emphasis. The h1 now carries the
+   proposition and the masthead keeps the name.
+--------------------------------------------------------------------------- */
+
+.masthead {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in oklab, var(--ground) 82%, transparent);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease;
+}
+.masthead .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; padding-block: 0.85rem;
+}
+.wordmark {
+  font-family: var(--serif);
+  font-size: 1.22rem; font-weight: 600;
+  letter-spacing: 0.2em; text-indent: 0.2em;   /* tracking without a ragged right */
+  text-decoration: none; color: var(--text);
+}
+.nav { display: flex; gap: clamp(0.9rem, 2.2vw, 1.9rem); align-items: center; flex-wrap: wrap; }
+.nav a {
+  position: relative;
+  font: 500 0.875rem/1 var(--sans);
+  letter-spacing: 0.005em;
+  color: var(--text-2); text-decoration: none;
+  padding-block: 0.35rem;
+  transition: color 160ms ease;
+}
+.nav a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--accent-orn);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 220ms cubic-bezier(.2,.7,.3,1);
+}
+.nav a:hover { color: var(--text); }
+.nav a:hover::after, .nav a:focus-visible::after { transform: scaleX(1); }
+.nav a[aria-current="page"] { color: var(--text); }
+.nav a[aria-current="page"]::after { transform: scaleX(1); background: var(--accent); }
+
+.hero { position: relative; overflow: hidden; }
+.hero > .wrap { position: relative; z-index: 1; }
+.hero-h1 {
+  font-size: clamp(2.05rem, 1.2rem + 3.6vw, 3.5rem);
+  margin-block: 0.1em 0.55em;
+}
+
+/* The guilloché: a hypotrochoid rosette, an Archimedean hairspring, chapter
+   rings and a 60-tick minute track — the pattern a rose engine cuts into a
+   dial. Generated from the curve maths rather than traced, so it stays exact at
+   any size. Sits behind the hero, bleeding off the right edge. */
+.guilloche {
+  position: absolute;
+  top: 50%; right: -14%;
+  width: min(46rem, 82vw); height: auto;
+  transform: translateY(-50%);
+  color: var(--accent-orn);
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(closest-side, #000 55%, transparent 92%);
+  -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent 92%);
+}
+@media (prefers-color-scheme: dark) { .guilloche { opacity: 0.20; } }
+@media (max-width: 56rem) {
+  .guilloche { top: 12%; right: -34%; width: 40rem; transform: none; opacity: 0.11; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .guilloche { animation: guilloche-drift 90s linear infinite; }
+  @keyframes guilloche-drift {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to   { transform: translateY(-50%) rotate(360deg); }
+  }
+  @media (max-width: 56rem) {
+    @keyframes guilloche-drift { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  }
+}
+
+/* Interior pages: same rosette, quieter, anchored top-right of the first
+   section so it sits behind the page title without touching the prose. */
+.has-guilloche { position: relative; overflow: hidden; }
+.has-guilloche > .wrap { position: relative; z-index: 1; }
+.guilloche-page {
+  top: -12%; right: -22%; width: min(34rem, 74vw);
+  transform: none; opacity: 0.10;
+  animation: none !important;
+}
+@media (prefers-color-scheme: dark) { .guilloche-page { opacity: 0.14; } }
+@media (max-width: 56rem) { .guilloche-page { opacity: 0.07; right: -40%; } }
