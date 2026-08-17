@@ -549,3 +549,111 @@ td.no { color: var(--text-2); }
   section { padding-block: 1rem; break-inside: avoid; }
   .card { break-inside: avoid; border: 1px solid #ccc; }
 }
+
+/* ---------------------------------------------------------------------------
+   Illustrations — device shots and inline SVG diagrams.
+
+   Everything here is self-contained: no CDN, no web fonts, no external images.
+   The diagrams are inline SVG so they inherit the palette through currentColor
+   and the custom properties, which means they follow the light/dark switch for
+   free and stay crisp at any zoom. Screenshots are the real app, captured by
+   `Orchestration/bin/shot` and downscaled — not mockups.
+--------------------------------------------------------------------------- */
+
+.hero-grid {
+  display: grid;
+  gap: clamp(2rem, 6vw, 4rem);
+  align-items: center;
+}
+@media (min-width: 56rem) {
+  .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); }
+}
+
+.hero-shot { justify-self: center; }
+
+/* A restrained device frame: a hairline and a soft shadow, no glossy chrome.
+   The screenshot is already dark, so on the light theme it needs a border to
+   sit on the page rather than float. */
+.device {
+  position: relative;
+  width: min(19rem, 78vw);
+  border-radius: 2.25rem;
+  padding: 0.5rem;
+  background: var(--surface-high);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+}
+.device img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.85rem;
+}
+
+.shots {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  margin-block: 2rem;
+  padding: 0;
+  list-style: none;
+}
+.shots li { margin: 0; text-align: center; }
+.shots .device { width: 100%; }
+.shots figcaption,
+.shots .cap {
+  margin-top: 0.75rem;
+  font: 400 0.85rem/1.45 var(--sans);
+  color: var(--text-2);
+}
+
+/* Diagrams --------------------------------------------------------------- */
+
+.diagram {
+  margin: clamp(1.75rem, 4vw, 2.75rem) 0;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+.diagram svg { display: block; width: 100%; height: auto; }
+.diagram figcaption {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--hairline);
+  font: 400 0.9rem/1.5 var(--sans);
+  color: var(--text-2);
+}
+
+/* Shared node styling. Text is centred by default; the egress diagram opts out
+   with .dg-l / .dg-sub, which are left-aligned inside wider plates. */
+.diagram rect { fill: var(--surface-high); stroke: var(--hairline-strong); stroke-width: 1; }
+.diagram text {
+  fill: var(--text);
+  font: 500 13px/1 var(--sans);
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+.dg-core rect { fill: var(--surface-high); stroke: var(--accent-orn); stroke-width: 1.5; }
+.dg-core text { font-family: var(--serif); font-size: 17px; font-weight: 600; }
+.dg-hero { stroke: var(--accent-orn) !important; stroke-width: 1.5 !important; }
+
+.dg-wire path { stroke: var(--hairline-strong); stroke-width: 1.25; }
+.dg-in text, .dg-out text { font-size: 12.5px; }
+.diagram .dg-sub { fill: var(--text-2); font-size: 11.5px; font-weight: 400; }
+
+/* Egress plates read as label + destination, so left-align both lines. */
+.diagram-egress .dg-out text { text-anchor: start; }
+.diagram-egress .dg-l { font-weight: 600; }
+.diagram-egress .dg-core text { text-anchor: middle; }
+
+/* The arrow that does not exist. Dashed, muted, and captioned as such — the
+   point of the diagram is the absence, so it has to be visible to be absent. */
+.dg-none path { stroke: var(--hairline-strong); stroke-width: 1.25; stroke-dasharray: 4 5; }
+.dg-none rect { fill: none; stroke: var(--hairline); stroke-dasharray: 4 5; }
+.dg-none text { fill: var(--text-2); font-size: 12px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .device { transition: box-shadow 220ms ease; }
+}

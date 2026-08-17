@@ -29,15 +29,23 @@
 <main id="main">
 
   <div class="hero">
-    <div class="wrap">
-      <h1><span class="wordmark-xl">ROTA</span></h1>
-      <p class="tagline">The most beautiful way to wear your collection.</p>
-      <p class="lede">ROTA is the daily ritual app for watch collectors. Every morning it
-        answers one question with taste and context — <em>which watch today?</em> — and
-        wraps that ritual in a gallery-grade collection manager, a personal taste engine,
-        wear analytics, a dream list and a shareable lookbook.</p>
-      <hr class="rule-gold">
-      <p class="small">iPhone and iPad · iOS 26 · Coming to the App Store</p>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1><span class="wordmark-xl">ROTA</span></h1>
+        <p class="tagline">The most beautiful way to wear your collection.</p>
+        <p class="lede">ROTA is the daily ritual app for watch collectors. Every morning it
+          answers one question with taste and context — <em>which watch today?</em> — and
+          wraps that ritual in a gallery-grade collection manager, a personal taste engine,
+          wear analytics, a dream list and a shareable lookbook.</p>
+        <hr class="rule-gold">
+        <p class="small">iPhone and iPad · iOS 26 · Coming to the App Store</p>
+      </div>
+      <div class="hero-shot">
+        <div class="device" role="img"
+             aria-label="The Today screen: a Bulova Lunar Pilot on its plinth, tagged Work — Remote, with a Wear it button.">
+          <img src="assets/shots/01-today.png" width="440" height="956" alt="" loading="eager" decoding="async">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -72,6 +80,49 @@
     <div class="wrap">
       <p class="eyebrow">The rotation graph</p>
       <h2 id="rotation-h">Not "you haven't worn this in a while."</h2>
+
+      <figure class="diagram">
+        <svg viewBox="0 0 720 300" role="img" aria-labelledby="rg-t rg-d">
+          <title id="rg-t">How ROTA reaches one suggestion</title>
+          <desc id="rg-d">Six inputs — occasion, weather, wear equity, straps, your taste and
+            last time — feed a scoring engine, which produces one hero pick plus ranked
+            alternates and a Why this pick explanation.</desc>
+          <g class="dg-in">
+            <g transform="translate(0,14)"><rect width="176" height="34" rx="17"/><text x="88" y="22">Occasion</text></g>
+            <g transform="translate(0,58)"><rect width="176" height="34" rx="17"/><text x="88" y="22">Live weather</text></g>
+            <g transform="translate(0,102)"><rect width="176" height="34" rx="17"/><text x="88" y="22">Wear equity</text></g>
+            <g transform="translate(0,146)"><rect width="176" height="34" rx="17"/><text x="88" y="22">Straps</text></g>
+            <g transform="translate(0,190)"><rect width="176" height="34" rx="17"/><text x="88" y="22">Your taste</text></g>
+            <g transform="translate(0,234)"><rect width="176" height="34" rx="17"/><text x="88" y="22">What you chose last</text></g>
+          </g>
+          <g class="dg-wire" fill="none">
+            <path d="M176 31 C 232 31, 236 150, 288 150"/>
+            <path d="M176 75 C 232 75, 240 150, 288 150"/>
+            <path d="M176 119 C 232 119, 244 150, 288 150"/>
+            <path d="M176 163 C 232 163, 244 150, 288 150"/>
+            <path d="M176 207 C 232 207, 240 150, 288 150"/>
+            <path d="M176 251 C 232 251, 236 150, 288 150"/>
+          </g>
+          <g class="dg-core">
+            <rect x="288" y="112" width="150" height="76" rx="14"/>
+            <text x="363" y="141">Scoring</text>
+            <text x="363" y="166">engine</text>
+          </g>
+          <g class="dg-wire" fill="none">
+            <path d="M438 150 C 476 150, 480 58, 520 58"/>
+            <path d="M438 150 C 476 150, 480 150, 520 150"/>
+            <path d="M438 150 C 476 150, 480 242, 520 242"/>
+          </g>
+          <g class="dg-out">
+            <g transform="translate(520,40)"><rect width="200" height="36" rx="18" class="dg-hero"/><text x="100" y="23">One hero pick</text></g>
+            <g transform="translate(520,132)"><rect width="200" height="36" rx="18"/><text x="100" y="23">Ranked alternates</text></g>
+            <g transform="translate(520,224)"><rect width="200" height="36" rx="18"/><text x="100" y="23">“Why this pick?”</text></g>
+          </g>
+        </svg>
+        <figcaption>Every input is on your device. The engine is deterministic: the same
+          inputs give the same answer, which is what makes the explanation honest.</figcaption>
+      </figure>
+
       <div class="prose">
         <p>Every morning ROTA runs a decision graph over your collection: occasion type ×
           live weather × wear equity × strap configuration × your learned taste × what you
@@ -85,6 +136,52 @@
           together, because a beginner's collection is their straps: one Aqua Terra on a
           bracelet, a grey NATO and a leather strap is already a six-mood wardrobe.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="screens" aria-labelledby="screens-h">
+    <div class="wrap">
+      <p class="eyebrow">On the phone</p>
+      <h2 id="screens-h">Five screens, unretouched.</h2>
+      <p class="lede">Captured from the running app on an iPhone 17 Pro. No mockups, no
+        composited devices, no invented data.</p>
+      <ul class="shots">
+        <li>
+          <figure>
+            <div class="device"><img src="assets/shots/01-today.png" width="440" height="956"
+                 alt="The Today screen: a Bulova Lunar Pilot on a plinth, tagged Work — Remote, with wear history and a Wear it button." loading="lazy" decoding="async"></div>
+            <figcaption>Today — one hero pick, and the working behind it.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div class="device"><img src="assets/shots/02-box.png" width="440" height="956"
+                 alt="The Box: a virtual watch box with filled slots and one empty cushion." loading="lazy" decoding="async"></div>
+            <figcaption>The Box — always room for one more.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div class="device"><img src="assets/shots/03-taste.png" width="440" height="956"
+                 alt="My Taste: six scoring axes with sliders the owner tunes." loading="lazy" decoding="async"></div>
+            <figcaption>My Taste — six axes, weighted by you.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div class="device"><img src="assets/shots/04-vitrine.png" width="440" height="956"
+                 alt="The Vitrine: a ranked dream list with target budgets." loading="lazy" decoding="async"></div>
+            <figcaption>The Vitrine — what you are saving for.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <div class="device"><img src="assets/shots/05-privacy.png" width="440" height="956"
+                 alt="The privacy manifesto screen, naming each of the three things that leave the device." loading="lazy" decoding="async"></div>
+            <figcaption>The claim, stated in the app itself.</figcaption>
+          </figure>
+        </li>
+      </ul>
     </div>
   </section>
 

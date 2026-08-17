@@ -79,6 +79,47 @@
   <p>Three things do leave, and you should know all three by name. Nothing else does, and
     nothing at all comes to us.</p>
 
+  <figure class="diagram diagram-egress">
+    <svg viewBox="0 0 720 330" role="img" aria-labelledby="eg-t eg-d">
+      <title id="eg-t">The three things that leave your device</title>
+      <desc id="eg-d">Your phone sends approximate location to Apple's weather service,
+        your collection to your own private iCloud, and RSS requests to publishers you
+        switch on. Nothing is sent to ROTA — we run no servers.</desc>
+
+      <g class="dg-core">
+        <rect x="16" y="115" width="168" height="100" rx="16"/>
+        <text x="100" y="152">Your iPhone</text>
+        <text x="100" y="178" class="dg-sub">everything lives here</text>
+      </g>
+
+      <g class="dg-wire" fill="none">
+        <path d="M184 145 C 268 145, 300 58, 392 58"/>
+        <path d="M184 165 C 268 165, 300 165, 392 165"/>
+        <path d="M184 185 C 268 185, 300 272, 392 272"/>
+      </g>
+
+      <g class="dg-out">
+        <g transform="translate(392,34)"><rect width="312" height="50" rx="14"/>
+          <text x="16" y="21" class="dg-l">Approximate location</text>
+          <text x="16" y="39" class="dg-sub">→ Apple, for WeatherKit</text></g>
+        <g transform="translate(392,141)"><rect width="312" height="50" rx="14"/>
+          <text x="16" y="21" class="dg-l">Your collection</text>
+          <text x="16" y="39" class="dg-sub">→ your own private iCloud</text></g>
+        <g transform="translate(392,248)"><rect width="312" height="50" rx="14"/>
+          <text x="16" y="21" class="dg-l">RSS requests</text>
+          <text x="16" y="39" class="dg-sub">→ publishers you switch on</text></g>
+      </g>
+
+      <g class="dg-none">
+        <path d="M100 215 L 100 292" fill="none"/>
+        <g transform="translate(16,292)"><rect width="168" height="34" rx="17"/>
+          <text x="84" y="22">Nothing → ROTA</text></g>
+      </g>
+    </svg>
+    <figcaption>We operate no servers, so there is no fourth arrow. The dashed path is the
+      one that does not exist.</figcaption>
+  </figure>
+
 </div>
 
 <div class="wrap">
