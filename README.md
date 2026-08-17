@@ -28,11 +28,11 @@ code):
 
 | Page | URL |
 |---|---|
-| Landing | `https://jmamblat.github.io/rota-site/` |
-| **Privacy** | `https://jmamblat.github.io/rota-site/privacy/` |
-| **Terms** | `https://jmamblat.github.io/rota-site/terms/` |
-| Support | `https://jmamblat.github.io/rota-site/support/` |
-| Press kit | `https://jmamblat.github.io/rota-site/press/` |
+| Landing | `https://sourcefrenchy.github.io/rota-site/` |
+| **Privacy** | `https://sourcefrenchy.github.io/rota-site/privacy/` |
+| **Terms** | `https://sourcefrenchy.github.io/rota-site/terms/` |
+| Support | `https://sourcefrenchy.github.io/rota-site/support/` |
+| Press kit | `https://sourcefrenchy.github.io/rota-site/press/` |
 
 The two bold URLs appear in **three** places and all three must agree exactly, trailing
 slash included:
@@ -88,7 +88,7 @@ First deploy takes a couple of minutes. Then verify, before touching App Store C
 ```bash
 for p in "" privacy/ terms/ support/ press/; do
   printf '%-10s %s\n' "$p" \
-    "$(curl -sSo /dev/null -w '%{http_code}' https://jmamblat.github.io/rota-site/$p)"
+    "$(curl -sSo /dev/null -w '%{http_code}' https://sourcefrenchy.github.io/rota-site/$p)"
 done
 ```
 
