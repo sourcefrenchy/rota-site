@@ -664,3 +664,70 @@ td.no { color: var(--text-2); }
 .grid-single { grid-template-columns: minmax(0, 26rem); justify-content: center; }
 .card-price { text-align: center; }
 .card-price .price { font-size: clamp(2.25rem, 6vw, 3rem); }
+
+/* ---------------------------------------------------------------------------
+   Typographic tightening.
+
+   The page had the right typefaces and the wrong settings: long measures, loose
+   leading, and headings tracked at defaults that read as web-generic rather than
+   editorial. These overrides land last so they win without touching the rules
+   above, which the rest of the design depends on.
+--------------------------------------------------------------------------- */
+
+:root { --measure: 32rem; }
+
+body {
+  font-family: var(--sans);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  line-height: 1.58;
+  letter-spacing: -0.006em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+}
+
+/* Display type: serif, tight, optically sized. Negative tracking is what makes
+   a large serif look set rather than scaled. */
+h1, h2, h3, .tagline, .price, .wordmark-xl {
+  font-family: var(--serif);
+  letter-spacing: -0.022em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+h2 { font-size: clamp(1.65rem, 1.15rem + 2.1vw, 2.5rem); margin-block: 0 0.75em; }
+h3 { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); letter-spacing: -0.015em; line-height: 1.2; }
+
+/* Lede and body: prevent orphans, hold the measure. */
+.lede {
+  font-family: var(--serif);
+  font-size: clamp(1.12rem, 1.02rem + 0.5vw, 1.35rem);
+  line-height: 1.42;
+  letter-spacing: -0.012em;
+  text-wrap: pretty;
+  max-width: var(--measure);
+}
+p, li { text-wrap: pretty; }
+.prose p { max-width: var(--measure); }
+
+/* Eyebrows: small caps rather than shouted uppercase. */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.6em;
+}
+
+/* Tabular figures wherever numbers are compared down a column. */
+table, .price, time { font-variant-numeric: tabular-nums lining-nums; }
+.price { letter-spacing: -0.03em; }
+
+/* Rhythm: sections were evenly spaced, which reads as a list. Give the page a
+   breath between movements instead. */
+section { padding-block: clamp(2.75rem, 7vw, 5rem); }
+.card { padding: clamp(1.1rem, 2.4vw, 1.5rem); }
+.card h3 { margin-bottom: 0.4em; }
