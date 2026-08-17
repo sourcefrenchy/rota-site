@@ -1150,3 +1150,67 @@ body { padding-block-end: var(--buildrail-h); }
 @supports not (backdrop-filter: blur(1px)) {
   .buildstamp { background: var(--ground); }
 }
+
+/* ---------------------------------------------------------------------------
+   Section-up arrows.
+
+   Each section and each h2 after the first carries a small arrow back to the one
+   above it, so a long page like the terms or the privacy manifesto can be walked
+   backwards without scrolling by hand. It floats to the right of the heading rule
+   and stays quiet until hovered — navigation furniture, not decoration.
+--------------------------------------------------------------------------- */
+
+.section-up {
+  float: right;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-block-start: 0.35rem;
+  margin-inline-start: 1rem;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  color: var(--text-2);
+  text-decoration: none;
+  opacity: 0.55;
+  transition: opacity 180ms ease, border-color 180ms ease,
+              color 180ms ease, transform 180ms cubic-bezier(.2,.7,.3,1);
+}
+.section-up svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.section-up:hover,
+.section-up:focus-visible {
+  opacity: 1;
+  color: var(--accent);
+  border-color: var(--accent-orn);
+  transform: translateY(-2px);
+}
+.section-up:active { transform: translateY(0); }
+
+/* Sections get theirs pinned to the top-right of the block instead of floating
+   into a heading, because a <section> has no text baseline to sit against. */
+section > .section-up {
+  float: none;
+  position: absolute;
+  inset-block-start: clamp(1rem, 3vw, 2rem);
+  inset-inline-end: var(--gutter);
+  margin: 0;
+  z-index: 2;
+}
+section:has(> .section-up) { position: relative; }
+
+@media (max-width: 34rem) {
+  .section-up { width: 1.75rem; height: 1.75rem; margin-inline-start: 0.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-up { transition: opacity 180ms ease; }
+  .section-up:hover, .section-up:focus-visible { transform: none; }
+}
