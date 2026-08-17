@@ -1254,3 +1254,48 @@ section:has(> .section-up) { position: relative; }
   .section-up { width: 2.1rem; height: 2.1rem; }
   .section-up svg { width: 1rem; height: 1rem; }
 }
+
+/* ---------------------------------------------------------------------------
+   Page inset.
+
+   `--wide: 74rem` is 1184 px — on a 1280–1440 px laptop that leaves almost no
+   air at the edges, so the page reads as full-bleed rather than as a composed
+   column. The container now takes the *smaller* of its max width and the viewport
+   minus a real outer inset, so there is always visible margin however wide the
+   window gets.
+--------------------------------------------------------------------------- */
+
+:root {
+  --page-inset: clamp(1.25rem, 6vw, 5.5rem);
+  --wide: 68rem;
+}
+
+.wrap,
+.wrap.prose,
+.wrap.hero-grid,
+.masthead .wrap,
+.foot .wrap {
+  max-width: min(var(--wide), 100% - (2 * var(--page-inset)));
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+/* Prose keeps its narrower reading column, subject to the same inset. */
+.wrap.prose { max-width: min(58rem, 100% - (2 * var(--page-inset))); }
+
+/* Structural blocks may exceed the reading column but never the page inset. */
+.wrap.prose > .table-scroll,
+.wrap.prose > figure,
+.wrap.prose > .diagram,
+.wrap.prose > .egress,
+.wrap.prose > .grid {
+  width: 100%;
+  margin-inline: 0;
+}
+
+/* The section arrow tracked the old gutter; anchor it to the column instead. */
+section > .section-up { inset-inline-end: 0; }
+
+@media (max-width: 34rem) {
+  :root { --page-inset: 1.1rem; }
+}
