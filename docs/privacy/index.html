@@ -7,7 +7,7 @@
 <meta name="description" content="ROTA has no servers, no accounts, and no analytics — we never receive your data. Three things do leave your phone, and this page names all three.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0E1512">
-<link rel="stylesheet" href="../assets/rota.css?v=20260817213501">
+<link rel="stylesheet" href="../assets/rota.css?v=20260817215245">
 </head>
 <body>
 <div class="backdrop" aria-hidden="true">
@@ -68,7 +68,7 @@
     <strong>Data Not Collected</strong> label means.</p>
 
   <p>There is no ROTA account, because there is no ROTA server to hold one. No advertising
-    identifier, no attribution framework, and nowhere for anything to be sent.</p>
+    identifier, no attribution framework.</p>
 
   <p>No third-party SDKs are linked into ROTA — not one, not for analytics, not for the
     paywall.</p>
@@ -76,7 +76,7 @@
   <nav class="toc" aria-labelledby="toc-h">
     <h2 id="toc-h">On this page</h2>
     <ol>
-      <li><a href="#egress">What leaves this phone — all three</a></li>
+      <li><a href="#egress">What leaves this phone</a></li>
       <li><a href="#apple">Two more things, named for completeness</a></li>
       <li><a href="#stays">What stays in the app</a></li>
       <li><a href="#permissions">The permissions ROTA asks for</a></li>
@@ -171,8 +171,8 @@
           and prices.</dd>
         <dt>Why</dt>
         <dd>It is how your iPhone and iPad show the same collection — your storage, under
-          your Apple Account; we have no key and no copy. Sign out and ROTA keeps working on
-          this device.</dd>
+          your Apple Account; we have no key and no copy. Sign out and ROTA keeps
+          working.</dd>
         <dt>Who holds it</dt>
         <dd>You do. CloudKit's private database is readable only by the signed-in Apple
           Account. There is no public or shared database and no server-side code of ours. We
@@ -184,15 +184,15 @@
       <h3>Feed requests → the publishers you enable</h3>
       <dl>
         <dt>Where it goes</dt>
-        <dd>Each publisher whose feed you switch on — Hodinkee, Fratello, Monochrome and the
-          rest. Nothing is requested from a publisher whose feed is off.</dd>
+        <dd>Each publisher whose feed you switch on — Hodinkee, Fratello, Monochrome.
+          Nothing is requested from a publisher whose feed is off.</dd>
         <dt>What is sent</dt>
         <dd>Their server sees your device's IP address and the fact that a feed was fetched.
           It is not told which watches you own; matching headlines to your collection happens
           on the device.</dd>
         <dt>Why</dt>
         <dd>It is how the Journal has anything in it. Switch a feed off and nothing is
-          requested from that publisher again.</dd>
+          requested again.</dd>
         <dt>Who holds it</dt>
         <dd>The publisher, under their own privacy policy — the same as opening their site
           in Safari. Tapping a headline opens the publisher's page in a Safari view.</dd>
@@ -213,18 +213,17 @@
   <h3>Purchases</h3>
   <p>If you buy ROTA Pro, Apple handles the entire transaction. We never see your name, your
     payment details, your address or your Apple Account. StoreKit tells the app one thing —
-    whether an entitlement is active — cached on the device so the app knows you are Pro
-    offline. App Store Connect later shows us aggregate sales figures by country, the report
-    every developer receives; it contains no identity and nothing about your collection.</p>
+    whether an entitlement is active — cached on the device so it works offline. App Store
+    Connect later shows us aggregate sales figures by country; they contain no identity and
+    nothing about your collection.</p>
 
-  <h3>Crash reports, only if you have opted in</h3>
+  <h3>Crash reports, if you have opted in</h3>
   <p>iOS has a system setting, <em>Settings → Privacy &amp; Security → Analytics &amp;
     Improvements → Share With App Developers</em>. If it is on, Apple may include ROTA in
-    the anonymised crash and energy reports it shows developers in App Store Connect. Those
-    reports are a stack trace, an OS version and a device model. They contain nothing you
-    typed, no photographs, no collection data and no identifier that points at you. We do
-    not operate that pipeline, and you can switch it off for every app in that same
-    setting.</p>
+    the anonymised crash reports it shows developers in App Store Connect: a stack trace, an
+    OS version, a device model. They contain nothing you typed, no photographs, no collection
+    data and no identifier that points at you. We do not operate that pipeline; you can
+    switch it off in that same setting.</p>
 
   <a class="section-up" href="#apple" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="stays">What stays in the app</h2>
@@ -250,11 +249,11 @@
 
   <a class="section-up" href="#stays" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="permissions">The permissions ROTA asks for</h2>
-  <p>Each one is asked for in context, at the moment it becomes useful, and each is optional.
-    Declining any of them leaves the app fully functional with that one assist absent.</p>
+  <p>Each is asked for in context, at the moment it becomes useful, and each is optional.
+    Declining leaves the app fully functional.</p>
   <div class="table-scroll">
     <table>
-      <caption>Every permission, and what it is used for.</caption>
+      <caption>Every permission and its use.</caption>
       <thead>
         <tr><th scope="col">Permission</th><th scope="col">Used for</th><th scope="col">If you decline</th></tr>
       </thead>
@@ -262,19 +261,18 @@
         <tr>
           <th scope="row">Location, when in use, reduced accuracy</th>
           <td>Fetching today's weather for the rotation. Never stored.</td>
-          <td>The rotation renormalises without weather and the weather glyph is absent.</td>
+          <td>The rotation renormalises without weather.</td>
         </tr>
         <tr>
           <th scope="row">Calendar</th>
           <td>Reading today's events on the device to suggest a day type — a flight becomes
-            Travel, a dinner becomes Business Casual. Off unless you turn it on.</td>
-          <td>You pick the day type yourself, which is the default behaviour anyway.</td>
+            Travel. Off unless you turn it on.</td>
+          <td>You pick the day type yourself, the default anyway.</td>
         </tr>
         <tr>
           <th scope="row">Camera</th>
           <td>Photographing your watches.</td>
-          <td>Add photographs from your library instead, or none at all — a Specimen Card
-            stands in.</td>
+          <td>Add photographs from your library, or none at all.</td>
         </tr>
         <tr>
           <th scope="row">Photo library</th>
@@ -283,104 +281,95 @@
         </tr>
         <tr>
           <th scope="row">Notifications</th>
-          <td>The morning rotation notification and Care reminders. All of them are local
-            notifications scheduled on the device — ROTA operates no push server and sends
-            no remote notifications of its own.</td>
-          <td>The morning card is waiting in the app instead.</td>
+          <td>The morning rotation notification and Care reminders — all local, scheduled
+            on the device. ROTA operates no push server.</td>
+          <td>The morning card waits in the app.</td>
         </tr>
       </tbody>
     </table>
   </div>
   <p class="small">ROTA does request the <em>remote notification</em> background capability.
     That is not a marketing channel: Apple's SwiftData iCloud sync uses silent system pushes
-    to learn that another one of your devices changed something, and the app is terminated
-    at launch without it. No message from us is ever delivered through it.</p>
+    to learn that another device changed something. No message from us is ever delivered
+    through it.</p>
 
   <a class="section-up" href="#permissions" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="manifest">What the privacy manifest declares</h2>
-  <p>Apple requires apps to declare a reason for certain APIs, and to declare any domains
-    used for tracking. ROTA's manifest declares:</p>
+  <p>Apple requires apps to declare a reason for certain APIs and any tracking domains.
+    ROTA's manifest declares:</p>
   <ul>
     <li><strong>Tracking: none.</strong> The tracking-domains list is empty. ROTA has never
-      asked for App Tracking Transparency permission because it has nothing to ask for.</li>
+      asked for App Tracking Transparency permission.</li>
     <li><strong>Collected data types: none.</strong></li>
     <li><strong>Required-reason APIs:</strong> user defaults (<code>CA92.1</code>), file
       timestamps (<code>C617.1</code>), disk space (<code>E174.1</code>) and system boot time
-      (<code>35F9.1</code>) — reached by settings storage, the image and thumbnail cache, the
-      free-space check before a PDF export, and animation timing respectively. All four are
-      device-local; none of them leaves the device or is linked to you.</li>
+      (<code>35F9.1</code>) — settings storage, the image cache, the free-space check before
+      a PDF export, and animation timing. All four are device-local; none is linked to
+      you.</li>
   </ul>
 
   <a class="section-up" href="#manifest" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="control">Deleting your data</h2>
-  <p>Because we hold nothing, there is nothing for us to delete and no request for you to
-    file. Everything is under your own control:</p>
+  <p>Because we hold nothing, there is nothing for us to delete and no request to file.
+    Everything is under your control:</p>
   <ul>
-    <li><strong>Delete a watch, a photograph or an entry</strong> in the app, and it is gone
-      from the device and, on the next sync, from your iCloud.</li>
+    <li><strong>Delete a watch, a photograph or an entry</strong>, and it is gone from the
+      device and, on the next sync, from iCloud.</li>
     <li><strong>Delete the app</strong> and its on-device store goes with it.</li>
     <li><strong>Delete the iCloud copy</strong> in <em>Settings → your name → iCloud →
-      Manage Account Storage</em>, where ROTA appears as an app using iCloud and can be
-      removed with its data.</li>
+      Manage Account Storage</em>, where ROTA can be removed with its data.</li>
     <li><strong>Take your data with you</strong> using the PDF lookbook export, which renders
-      on the device and is yours to share however you like.</li>
-    <li><strong>Stop the weather lookups</strong> in ROTA's own Assists settings, or revoke
+      on the device.</li>
+    <li><strong>Stop the weather lookups</strong> in ROTA's Assists settings, or revoke
       location in iOS Settings.</li>
     <li><strong>Stop the feed requests</strong> by switching feeds off in Journal.</li>
   </ul>
 
   <a class="section-up" href="#control" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="rights">GDPR, UK GDPR and US state privacy laws</h2>
-  <p>These laws grant you rights against whoever holds your personal data. In ROTA's case
-    the honest answer is that we are not that party for anything you enter in the app: we
-    are not a controller or a processor of your collection, because it never comes to us and
-    we have no means of obtaining it.</p>
+  <p>These laws grant you rights against whoever holds your personal data. We are not that
+    party for anything you enter in the app: not a controller, not a processor of your
+    collection, because it never comes to us.</p>
   <ul>
-    <li><strong>Access, portability, rectification and erasure</strong> are all exercised
-      directly in the app and in iOS, as described above, and do not need us.</li>
-    <li><strong>Apple</strong> is the party that holds your iCloud data and your weather
-      requests, under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy
-      Policy</a>. Your rights in respect of that data are exercisable against Apple, through
+    <li><strong>Access, portability, rectification and erasure</strong> are exercised in the
+      app and in iOS, as described above, and do not need us.</li>
+    <li><strong>Apple</strong> holds your iCloud data and your weather requests, under
+      <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. Your rights
+      in that data are exercisable against Apple, through
       <a href="https://privacy.apple.com/">Apple's own privacy portal</a>.</li>
     <li><strong>Publishers</strong> whose feeds you enable hold whatever their web servers
       log, under their own policies.</li>
     <li><strong>We do not sell or share personal information</strong> as those terms are
       defined by the California Consumer Privacy Act, or under any other state privacy law.
-      We have none to sell. There is no "Do Not Sell or Share My Personal Information" link
-      on this site because there is nothing behind it.</li>
+      There is no "Do Not Sell or Share My Personal Information" link on this site because
+      there is nothing behind it.</li>
     <li><strong>No automated decision-making with legal effect</strong> takes place. The
-      rotation engine is a scoring function that runs on your device and suggests a watch.</li>
+      rotation engine is a scoring function that runs on your device.</li>
   </ul>
-  <p>If you want any of this confirmed in writing for a compliance file, write to us and we
-    will confirm it in writing.</p>
+  <p>If you want this confirmed in writing for a compliance file, write to us.</p>
 
   <a class="section-up" href="#rights" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="children">Children</h2>
-  <p>ROTA is a general-audience app, rated 4+, with no user-generated content shown to other
-    people, no messaging, no advertising and no data collection. It is not directed at
-    children and it does not knowingly collect anything from anyone, of any age, because it
-    does not collect anything at all.</p>
+  <p>ROTA is a general-audience app, rated 4+: no user-generated content shown to others, no
+    messaging, no advertising, no data collection. It is not directed at children, and
+    collects nothing from anyone of any age.</p>
 
   <a class="section-up" href="#children" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="site">This website</h2>
   <p>This site is static HTML and CSS. It sets no cookies, runs no JavaScript, loads no
-    web fonts, embeds no third-party frames and carries no analytics of any kind. An app
-    whose pitch is "no analytics" cannot honestly ship a site with a tracking tag on it.</p>
+    web fonts, embeds no third-party frames and carries no analytics of any kind.</p>
   <p>It is hosted on GitHub Pages, so GitHub's servers receive the ordinary web-request
-    information — your IP address, the page you asked for, your browser's user-agent —
-    handled under
+    information — your IP address, the page you asked for, your user-agent — handled under
     <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's
-    privacy statement</a>. We do not receive those logs and cannot access them. The
-    outbound links on this site point to Apple, GitHub and publishers' own pages, and
-    following one takes you to a site with its own policy.</p>
+    privacy statement</a>. We do not receive those logs. Outbound links take you to sites
+    with their own policies.</p>
 
   <a class="section-up" href="#site" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="changes">Changes to this policy</h2>
   <p>If a future version of ROTA ever changes what leaves the device, this page changes
-    first, the app's in-app privacy manifesto changes with it, and the date at the top
-    changes. The app enumerates its egress points in code, and an automated test fails the
-    build if a fourth one is added without the copy being updated to name it. That is the
-    mechanism that makes this page hard to quietly falsify.</p>
+    first, the in-app manifesto with it, and the date at the top changes. The app enumerates
+    its egress points in code, and an automated test fails the build if a fourth is added
+    without the copy naming it.</p>
 
   <a class="section-up" href="#changes" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="contact">Contact</h2>
@@ -388,8 +377,8 @@
     <a href="mailto:jmamblat@icloud.com">jmamblat@icloud.com</a>. Everything else goes to
     <a href="../support/">support</a>.</p>
   <p class="small">Data controller for any correspondence you choose to send us:
-    <span class="mono">[legal entity name and postal address]</span>. If you email us, we hold your email until the question is answered
-    and then delete it.</p>
+    <span class="mono">[legal entity name and postal address]</span>. If you email us, we hold it until the question is
+    answered, then delete it.</p>
 
 </div>
 </section>
@@ -403,12 +392,12 @@
       <a href="../terms/">Terms</a>
       <a href="../support/">Support</a>
     </nav>
-    <p>Weather data is provided by
+    <p>Weather data provided by
       <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a>.</p>
     <p>This site sets no cookies, runs no scripts and carries no analytics.</p>
     <p>© 2026 ROTA. All rights reserved.</p>
   </div>
-  <p class="buildstamp"><span class="mono">built 2026-08-17 21:35 UTC</span></p>
+  <p class="buildstamp"><span class="mono">built 2026-08-17 21:52 UTC</span></p>
 </footer>
 
 </body>

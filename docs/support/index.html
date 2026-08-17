@@ -7,7 +7,7 @@
 <meta name="description" content="Help with ROTA: iCloud sync, weather, notifications, subscriptions and restoring purchases, catalog corrections, exports and accessibility. Email a human.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0E1512">
-<link rel="stylesheet" href="../assets/rota.css?v=20260817213501">
+<link rel="stylesheet" href="../assets/rota.css?v=20260817215245">
 </head>
 <body>
 <div class="backdrop" aria-hidden="true">
@@ -53,25 +53,22 @@
   <p class="eyebrow">Support</p>
   <h1>A person reads these.</h1>
 
-  <p class="lede">Write to <a href="mailto:jmamblat@icloud.com">jmamblat@icloud.com</a>. ROTA is a
-    small independent app, there is no ticket system and no bot, and replies usually arrive
-    within two or three business days.</p>
+  <p class="lede">Write to <a href="mailto:jmamblat@icloud.com">jmamblat@icloud.com</a>. There is no
+    ticket system and no bot; replies usually arrive within two or three business days.</p>
 
   <div class="notice">
     <p class="eyebrow">What to include</p>
     <p class="small">Your device and iOS version, the ROTA version from
-      <em>Settings → About</em>, what you did, what you expected, and what happened instead.
+      <em>Settings → About</em>, what you did, what you expected, what happened instead.
       <strong>Please do not send photographs of your collection, serial numbers or
-      screenshots containing them</strong> — we do not want them and we have nothing to store
-      them in.</p>
+      screenshots containing them</strong> — we have nothing to store them in.</p>
   </div>
 
   <h2 id="requirements">Requirements and compatibility</h2>
   <ul>
     <li>iOS 26 or later, on iPhone or iPad. One purchase covers both.</li>
-    <li>An iCloud account is optional. Without one, ROTA works fully on a single device.</li>
-    <li>No network connection is required for the daily suggestion, wear logging, the Box,
-      Admire or the PDF export. Weather and the Journal need one.</li>
+    <li>An iCloud account is optional; without one, ROTA works fully on one device.</li>
+    <li>No network connection is required except for weather and the Journal.</li>
     <li>English at launch. More languages are planned.</li>
   </ul>
 
@@ -80,168 +77,156 @@
 
   <h3>How do I restore a purchase on a new device?</h3>
   <p>Sign in to the same Apple Account you bought with, open ROTA, and tap
-    <em>Restore purchases</em> on the paywall or in <em>Settings → Subscription</em>. That
-    re-checks your entitlements with Apple. If the paywall still appears after a restore,
-    check that you are signed in to the purchasing Apple Account in
-    <em>Settings → your name → Media &amp; Purchases</em> — a different account is by far the
-    most common cause.</p>
+    <em>Restore purchases</em> on the paywall or in <em>Settings → Subscription</em>. If the
+    paywall still appears, check you are signed in to the purchasing Apple Account in
+    <em>Settings → your name → Media &amp; Purchases</em> — a different account is the most
+    common cause.</p>
 
   <h3>How do I cancel, or change plan?</h3>
   <p>In <em>Settings → your name → Subscriptions</em> on your device, or at
     <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>.
-    Apple does not let developers cancel a subscription on a customer's behalf, so we cannot
-    do it for you. Pro remains active until the end of the period you have paid for.</p>
+    Apple does not let developers cancel on a customer's behalf. Pro remains active until the
+    end of the period you have paid for.</p>
 
   <h3>I cancelled. What happens to my watches?</h3>
-  <p>Nothing. Every watch you have added stays visible and editable forever, whatever the
-    count — see <a href="../terms/#free">section 4 of the terms</a>. The free tier's
-    five-watch limit blocks only the adding of a sixth watch. Pro features go back to their
-    free behaviour; your content is untouched.</p>
+  <p>Nothing. Every watch you have added stays visible and editable forever — see
+    <a href="../terms/#free">section 4 of the terms</a>. The five-watch limit blocks only
+    adding a sixth. Pro features go back to their free behaviour; your content is
+    untouched.</p>
 
   <h3>I want a refund.</h3>
-  <p>Refunds are handled entirely by Apple at
+  <p>Refunds are handled by Apple at
     <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. We have no
     visibility of your payment and cannot issue one.</p>
 
   <h3>I bought Lifetime. Does my family get it?</h3>
-  <p>Yes — the lifetime purchase has Family Sharing enabled. Members of your Family Sharing
-    group can install ROTA and use Pro. Each person's collection is their own, in their own
-    iCloud; Family Sharing shares the purchase, not the data.</p>
+  <p>Yes: the lifetime purchase has Family Sharing enabled, so your group can install ROTA
+    and use Pro. Each person's collection is their own; Family Sharing shares the purchase,
+    not the data.</p>
 
   <a class="section-up" href="#purchases" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="sync">iCloud sync</h2>
 
   <h3>My iPad shows my watches but the photographs are missing.</h3>
-  <p>They are still arriving. A collection of fifty watches with photographs is hundreds of
-    megabytes, and iCloud delivers it over minutes or hours depending on your connection.
-    ROTA shows every watch immediately as a typographic Specimen Card and fills the
-    photographs in as they land. <em>Settings → iCloud</em> has a real progress row —
-    "Photographs are still arriving from iCloud — 128 of 240" — so you can see it working.
-    Keep the device on Wi-Fi and awake, and it will finish.</p>
+  <p>They are still arriving. Fifty watches with photographs is hundreds of megabytes, and
+    iCloud delivers it over minutes or hours. Every watch appears immediately as a
+    typographic Specimen Card, with photographs filling in as they land, and
+    <em>Settings → iCloud</em> has a progress row. Keep the device on Wi-Fi and awake.</p>
 
   <h3>An edit on one device has not appeared on the other.</h3>
   <p>Check, in order: both devices signed in to the same Apple Account; iCloud Drive enabled
-    in <em>Settings → your name → iCloud</em>; ROTA switched on in that same iCloud list;
-    enough iCloud storage remaining; and the sync status row in ROTA's Settings, which will
-    say <em>Paused, on cellular</em> or <em>Signed out</em> or show an error if one of these
-    is the cause. Sync is not instantaneous — give it a minute with the app in the
-    foreground.</p>
+    in <em>Settings → your name → iCloud</em>; ROTA switched on in that list; enough iCloud
+    storage; and the sync status row in ROTA's Settings, which will say
+    <em>Paused, on cellular</em> or <em>Signed out</em>. Sync is not instantaneous — give it
+    a minute in the foreground.</p>
 
   <h3>I edited the same watch on two devices while offline. Did I lose something?</h3>
   <p>You should not have. Wear entries are an append-only log, so two devices logging the
     same day both survive, and the Box and Vitrine orderings merge rather than collide. If
-    you do find something lost, duplicated or interleaved after a reconnection, that is a
-    bug we want to hear about in detail: which two devices, which screen, what each one
-    showed before and after.</p>
+    anything is lost or duplicated, that is a bug we want to hear about.</p>
 
   <h3>Can I use ROTA without iCloud?</h3>
-  <p>Yes. Signed out, everything works on that device alone. Nothing is hidden and no feature
-    is withheld — you simply have one device's copy, and you should keep a device backup.</p>
+  <p>Yes. Signed out, everything works on that device alone and no feature is withheld. Keep
+    a device backup.</p>
 
   <a class="section-up" href="#sync" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="weather">Weather</h2>
 
   <h3>The weather glyph is missing and the suggestion ignores the forecast.</h3>
   <p>ROTA needs location permission to fetch weather. Check
-    <em>Settings → ROTA → Location</em> is set to <em>While Using the App</em>, and check the
-    weather assist is on in ROTA's own <em>Assists</em> settings. ROTA asks iOS for
-    <em>reduced accuracy</em>, so precise location is neither needed nor requested.</p>
-  <p>If you decline, or you are offline, nothing breaks: the rotation engine renormalises
-    without the weather axis and the glyph is simply absent.</p>
+    <em>Settings → ROTA → Location</em> is set to <em>While Using the App</em>, and that the
+    weather assist is on in ROTA's <em>Assists</em> settings. ROTA asks iOS for
+    <em>reduced accuracy</em> only.</p>
+  <p>Decline, or go offline, and nothing breaks: the rotation renormalises without the
+    weather axis.</p>
 
   <h3>Is the forecast accurate?</h3>
-  <p>It is Apple Weather's, and it is as accurate as Apple Weather is. ROTA does not have its
-    own forecast and cannot correct one.</p>
+  <p>It is Apple Weather's, and ROTA cannot correct it.</p>
 
   <a class="section-up" href="#weather" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="notifications">Notifications</h2>
 
   <h3>The morning notification did not arrive.</h3>
-  <p>Check <em>Settings → ROTA → Notifications</em> is allowed, then check your suggestion
-    time in ROTA's Settings, and check that a Focus or Sleep schedule is not filtering it.
-    Notifications are scheduled locally, in advance — ROTA operates no push server — so a
-    notification for tomorrow is written when you open the app today. Open the app once a day
-    and it will always have one queued.</p>
+  <p>Check <em>Settings → ROTA → Notifications</em> is allowed, your suggestion time in
+    ROTA's Settings, and that a Focus or Sleep schedule is not filtering it. Notifications
+    are scheduled locally, in advance — ROTA operates no push server. Open the app once a day
+    and one is always queued.</p>
 
   <h3>Some Care reminders never fire.</h3>
-  <p>iOS allows any single app 64 pending notifications in total. ROTA schedules the twenty
-    soonest Care reminders and re-rolls that window every time you open the app, so the rest
-    are not lost — they are simply not scheduled yet. The Care room always shows the complete
-    list, computed live.</p>
+  <p>iOS allows any single app 64 pending notifications. ROTA schedules the twenty soonest
+    Care reminders and re-rolls that window each time you visit the Care room; the rest are
+    not lost, just not scheduled yet. The Care room always shows the complete list.</p>
 
   <a class="section-up" href="#notifications" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="journal">The Journal</h2>
 
   <h3>A feed is empty or has stopped updating.</h3>
-  <p>Publishers change and retire their feed URLs without notice. If a feed stops responding, ROTA keeps the stories it already has and retries later. If a feed
+  <p>Publishers change and retire feed URLs without notice. If a feed stops responding, ROTA keeps the stories it already has and retries later. If a feed
     stays dead, tell us which one and we will fix the URL in the next release.</p>
 
   <h3>Why does ROTA only show the headline?</h3>
-  <p>Deliberately. ROTA shows the headline, the source, the date and a link, and nothing
-    else — no article text, no excerpt, no summary, no publisher imagery and no reader mode.
-    We are a pointer to the publisher, never a substitute for them. Tapping a headline opens
-    their own page, with their own layout and their own advertising.</p>
+  <p>Deliberately. ROTA shows the headline, the source, the date and a link — no article
+    text, no excerpt, no imagery, no reader mode. We are a pointer to the publisher, never a
+    substitute. Tapping a headline opens their own page, with their own advertising.</p>
 
   <h3>Can I add my own feed?</h3>
-  <p>Not in the first release. Tell us which one you want and it may make the registry.</p>
+  <p>Not in the first release. Tell us which one you want.</p>
 
   <a class="section-up" href="#journal" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="catalog">The reference catalog</h2>
 
   <h3>My watch is not in the catalog.</h3>
-  <p>Add it manually — every field is editable and nothing about the app depends on a catalog
-    match. The catalog is a typing shortcut, not a gate. Send us the brand, model and
-    reference and we will consider it for a later release.</p>
+  <p>Add it manually — every field is editable and nothing depends on a catalog match. The
+    catalog is a typing shortcut, not a gate. Send us the brand, model and reference for a
+    later release.</p>
 
   <h3>A catalog value is wrong.</h3>
   <p>Open the watch page and tap <em>Report a correction</em>. That opens your mail app with
-    the catalog row and the app version filled in, and nothing else — no photographs, no
-    collection, no identifiers. You see the message before it sends, and you can edit it.
-    Corrections go to <a href="mailto:jmamblat@icloud.com">jmamblat@icloud.com</a>.</p>
-  <p>Prefilled fields are shown at reduced opacity with a gold underline until you confirm
-    them, because catalog data is compiled from public sources and does contain errors. A
-    wrong value degrades a suggestion; it never breaks one.</p>
+    the catalog row and the app version, and nothing else — no photographs, no collection, no
+    identifiers. Corrections go to
+    <a href="mailto:jmamblat@icloud.com">jmamblat@icloud.com</a>.</p>
+  <p>Prefilled fields are shown at reduced opacity until you confirm them, because catalog
+    data is compiled from public sources and does contain errors.</p>
 
   <a class="section-up" href="#catalog" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="export">Export, backup and leaving</h2>
 
   <h3>How do I get my collection out?</h3>
-  <p>The PDF lookbook, from <em>Settings → Export</em> or from any watch page, renders on the
-    device and is yours. Prices are excluded unless you switch them on at export time.
-    Serial numbers are never included in a shared document.</p>
+  <p>The PDF lookbook, from <em>Settings → Export</em> or any watch page, renders on the
+    device and is yours. Prices are excluded unless you switch them on at export; serial
+    numbers never appear.</p>
 
   <h3>Do you have a backup of my collection?</h3>
-  <p>No, and that is the point — <a href="../privacy/">we never receive it</a>. It also means
-    we cannot restore it for you. Keep an iCloud or Finder device backup, keep your iCloud
-    account in good standing, and export a lookbook occasionally for anything you would hate
-    to retype.</p>
+  <p>No, and that is the point — <a href="../privacy/">we never receive it</a>, and cannot
+    restore it for you. Keep an iCloud or Finder device backup, and export a lookbook
+    occasionally for anything you would hate to retype.</p>
 
   <h3>How do I delete everything?</h3>
   <p>Delete the app to remove the on-device store, then remove the iCloud copy in
     <em>Settings → your name → iCloud → Manage Account Storage → ROTA</em>. There is nothing
-    on our side to delete, and no request to file.</p>
+    on our side to delete.</p>
 
   <a class="section-up" href="#export" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="accessibility">Accessibility</h2>
   <p>ROTA is built for VoiceOver end to end — adding a watch, logging a wear and exporting a
-    lookbook are all completable without sight. Screens are designed to reflow at Dynamic Type sizes up to AX3 — score bars stack vertically and cards grow. A few layouts still truncate at the largest sizes and are being fixed. Reduce Motion
-    replaces every animation with a short fade. Colour is never the only carrier of meaning:
-    every state that has a colour also has a label.</p>
+    lookbook are all completable without sight. Screens are designed to reflow at Dynamic Type sizes up to AX3. A few layouts still truncate at the largest sizes and are being fixed. Reduce Motion
+    replaces every animation with a short fade. Colour is never the only carrier of
+    meaning.</p>
   <p>If something is not usable for you, that is a bug and it gets priority. Tell us what you
     use and what happened.</p>
 
   <a class="section-up" href="#accessibility" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="feedback">Bugs and feature requests</h2>
-  <p>Both to <a href="mailto:jmamblat@icloud.com">jmamblat@icloud.com</a>. For a bug, the most
-    useful thing you can send is a reliable way to reproduce it. For a feature, tell us the
-    problem you have rather than the solution you imagine — we will often find a better one.</p>
+  <p>Both to <a href="mailto:jmamblat@icloud.com">jmamblat@icloud.com</a>. For a bug, send a
+    reliable way to reproduce it. For a feature, tell us the problem rather than the solution
+    you imagine.</p>
 
   <a class="section-up" href="#feedback" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="security">Security and responsible disclosure</h2>
   <p>If you have pointed a proxy at ROTA and found a connection we do not name on the
     <a href="../privacy/">privacy page</a>, that is exactly the finding we want. Write to
-    <a href="mailto:jmamblat@icloud.com">jmamblat@icloud.com</a> with what you saw and how you saw
-    it. We will confirm, fix and credit you if you want the credit.</p>
+    <a href="mailto:jmamblat@icloud.com">jmamblat@icloud.com</a> with what you saw. We will
+    confirm, fix and credit you if you want it.</p>
 
 </div>
 </section>
@@ -255,12 +240,12 @@
       <a href="../terms/">Terms</a>
       <a href="./">Support</a>
     </nav>
-    <p>Weather data is provided by
+    <p>Weather data provided by
       <a href="https://weatherkit.apple.com/legal-attribution.html">Apple Weather</a>.</p>
     <p>This site sets no cookies, runs no scripts and carries no analytics.</p>
     <p>© 2026 ROTA. All rights reserved.</p>
   </div>
-  <p class="buildstamp"><span class="mono">built 2026-08-17 21:35 UTC</span></p>
+  <p class="buildstamp"><span class="mono">built 2026-08-17 21:52 UTC</span></p>
 </footer>
 
 </body>
