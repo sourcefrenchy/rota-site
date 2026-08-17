@@ -1061,3 +1061,47 @@ main, .foot { position: relative; z-index: 1; }
 @supports not (backdrop-filter: blur(1px)) {
   .masthead { background: var(--ground); }
 }
+
+/* ---------------------------------------------------------------------------
+   Masthead: fixed, not sticky.
+
+   `position: sticky` kept failing in the browser despite the rule being present
+   and deployed — sticky is defeated by any ancestor with a transform, filter,
+   contain or an overflow that is not `visible`, and this page has a fixed
+   backdrop, an animated SVG and several `overflow: hidden` sections. Rather than
+   keep hunting for which one wins, use `fixed`: it is not subject to any of that,
+   and the nav is the only route between five pages so it must not be fragile.
+
+   Fixed elements leave the flow, so the body reserves the height itself.
+--------------------------------------------------------------------------- */
+
+.masthead {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 50;
+  background: color-mix(in oklab, var(--ground) 88%, transparent);
+  backdrop-filter: saturate(170%) blur(16px);
+  -webkit-backdrop-filter: saturate(170%) blur(16px);
+  border-bottom: 1px solid color-mix(in oklab, var(--hairline) 70%, transparent);
+}
+
+/* Reserve exactly what the bar occupies, so nothing hides beneath it at rest. */
+body { padding-block-start: var(--masthead-h, 4.4rem); }
+:root { --masthead-h: 4.4rem; }
+@media (max-width: 34rem) { :root { --masthead-h: 4.1rem; } }
+
+/* The backdrop is fixed to the viewport, so it must not inherit that padding. */
+.backdrop { top: 0; }
+
+:root { scroll-padding-top: calc(var(--masthead-h) + 1rem); }
+[id] { scroll-margin-top: calc(var(--masthead-h) + 1rem); }
+
+@media (max-height: 26rem) {
+  .masthead { position: static; }
+  body { padding-block-start: 0; }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .masthead { background: var(--ground); }
+}
