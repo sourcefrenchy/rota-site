@@ -853,3 +853,49 @@ section { padding-block: clamp(2.75rem, 7vw, 5rem); }
 }
 @media (prefers-color-scheme: dark) { .guilloche-page { opacity: 0.14; } }
 @media (max-width: 56rem) { .guilloche-page { opacity: 0.07; right: -40%; } }
+
+/* ---------------------------------------------------------------------------
+   Full-page guilloché backdrop.
+
+   Previously this sat inside .hero, so it vanished the moment you scrolled and
+   never appeared on the interior pages. It is now one fixed layer behind every
+   page, which is also cheaper: one element, no repaint on scroll.
+--------------------------------------------------------------------------- */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.guilloche-bg {
+  width: min(190vh, 175vw);
+  height: auto;
+  color: var(--accent-orn);
+  opacity: 0.30;
+  /* Fade the outer ring so the pattern dissolves into the ground rather than
+     stopping at a hard circle. */
+  mask-image: radial-gradient(closest-side, #000 42%, rgba(0,0,0,.55) 72%, transparent 96%);
+  -webkit-mask-image: radial-gradient(closest-side, #000 42%, rgba(0,0,0,.55) 72%, transparent 96%);
+}
+@media (prefers-color-scheme: dark) { .guilloche-bg { opacity: 0.34; } }
+@media (max-width: 56rem)          { .guilloche-bg { width: 240vw; opacity: 0.22; } }
+
+/* Content rides above the backdrop. */
+.masthead, main, .foot { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .guilloche-bg { animation: guilloche-turn 240s linear infinite; }
+  @keyframes guilloche-turn { to { transform: rotate(360deg); } }
+}
+
+.buildstamp {
+  margin-top: 1.1rem;
+  font: 400 0.7rem/1.4 var(--mono);
+  color: var(--text-2);
+  opacity: 0.7;
+  letter-spacing: 0.01em;
+}
