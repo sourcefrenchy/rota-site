@@ -1105,3 +1105,5 @@ body { padding-block-start: var(--masthead-h, 4.4rem); }
 @supports not (backdrop-filter: blur(1px)) {
   .masthead { background: var(--ground); }
 }
+
+.buildstamp { text-align: center; }
