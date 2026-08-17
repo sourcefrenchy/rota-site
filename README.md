@@ -13,7 +13,6 @@ docs/
   privacy/index.html  Privacy policy  ← required by App Store Connect
   terms/index.html    Terms of use / EULA  ← required for auto-renewing subscriptions
   support/index.html  Support  ← required by App Store Connect
-  press/index.html    Press kit
   404.html            Not-found page (absolute links — see note below)
   assets/rota.css     The only stylesheet
   .nojekyll           Serve the tree verbatim; do not run Jekyll
@@ -32,7 +31,6 @@ code):
 | **Privacy** | `https://sourcefrenchy.github.io/rota-site/privacy/` |
 | **Terms** | `https://sourcefrenchy.github.io/rota-site/terms/` |
 | Support | `https://sourcefrenchy.github.io/rota-site/support/` |
-| Press kit | `https://sourcefrenchy.github.io/rota-site/press/` |
 
 The two bold URLs appear in **three** places and all three must agree exactly, trailing
 slash included:
@@ -67,7 +65,6 @@ cd /tmp && rm -rf rota-site && git clone git@github.com:sourcefrenchy/rota-site.
 cp -R /path/to/Rota/Site/docs /path/to/Rota/Site/README.md /tmp/rota-site/
 cd /tmp/rota-site
 git add -A
-git commit -m "Site: landing, privacy, terms, support, press kit"
 git push
 
 # 3 · Turn Pages on (once): Settings → Pages → Source: "Deploy from a branch",
