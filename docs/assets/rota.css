@@ -914,3 +914,73 @@ section { padding-block: clamp(2.75rem, 7vw, 5rem); }
   font-size: 9.5px;
   text-anchor: middle; dominant-baseline: central;
 }
+
+/* ---------------------------------------------------------------------------
+   Measure and column width — corrected.
+
+   `.prose` clamped its whole container to 32rem, and the interior pages use
+   `class="wrap prose"`, so privacy, terms, support and the press kit rendered as
+   a 512 px ribbon down the middle of a 1400 px page. Tables and diagrams inherited
+   that too, which is why the pricing and comparison tables felt cramped.
+
+   The fix separates two different things that had been conflated: the *container*
+   (how wide the page's content area is) and the *measure* (how long a line of
+   running text should be). The container is now generous; only paragraphs and
+   list text are held to a comfortable measure, and tables, figures, grids and
+   diagrams are free to use the full width.
+--------------------------------------------------------------------------- */
+
+:root {
+  --measure: 40rem;   /* ~72–78 characters at this size — a comfortable read */
+  --wide: 74rem;
+}
+
+/* The container no longer narrows. */
+.prose { max-width: none; }
+
+/* Only running text is held to the measure — and it stays left-aligned rather
+   than centring, so the eye keeps one consistent left edge down the page. */
+.prose > p,
+.prose > ul,
+.prose > ol,
+.prose > blockquote,
+.prose > .lede,
+.prose > h2 + p,
+.wrap > .prose > p {
+  max-width: var(--measure);
+}
+
+/* Anything structural breaks out to the full container. */
+.prose > .table-scroll,
+.prose > figure,
+.prose > .grid,
+.prose > .plans,
+.prose > .shots,
+.prose > .egress,
+.prose > .notice,
+.prose > .diagram,
+.table-scroll, .diagram, .plans, .shots { max-width: none; }
+
+/* Headings may run wider than body text without hurting readability. */
+.prose > h1, .prose > h2, .prose > h3 { max-width: 52rem; }
+
+/* Tables should fill the column they are given. */
+.table-scroll table { width: 100%; }
+
+/* The hero lede was centred with its own narrower cap; align it with the rest. */
+.hero p.lede { max-width: var(--measure); margin-inline: 0; }
+
+/* Every page uses the same content column.
+   `.wrap` is the single source of truth for width and gutter — `.prose`,
+   `.hero-grid` and the section wrappers all inherit it and none of them may
+   narrow it. Previously the mix of `wrap`, `wrap prose` and `wrap hero-grid`
+   produced three different column widths across five pages. */
+.wrap,
+.wrap.prose,
+.wrap.hero-grid,
+.masthead .wrap,
+.foot .wrap {
+  max-width: var(--wide);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
