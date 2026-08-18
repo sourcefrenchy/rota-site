@@ -153,6 +153,12 @@ p { margin: 0 0 1.1rem; }
 
 .small { font-size: 0.9375rem; line-height: 1.6; color: var(--text-2); }
 
+/* The App Store badge: Apple's own artwork at Apple's minimum size (40 pt tall),
+   with the caption riding its baseline. The badge ships unmodified per the badge
+   guidelines — recolouring or redrawing it is exactly what the licence forbids. */
+.store-badge-row { display: flex; align-items: center; gap: 0.9rem; margin-block: 0.25rem 0; }
+.store-badge { height: 2.75rem; width: auto; display: block; }
+
 .eyebrow {
   font-family: var(--sans);
   font-size: 0.75rem;
