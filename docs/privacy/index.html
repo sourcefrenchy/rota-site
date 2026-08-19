@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — ROTA</title>
-<meta name="description" content="ROTA has no servers, no accounts, and no analytics — we never receive your data. Three things do leave your phone, and this page names all three.">
+<meta name="description" content="ROTA has no servers, no accounts, and no analytics — we never receive your data. Four things do leave your phone, and this page names all four.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0E1512">
-<link rel="stylesheet" href="../assets/rota.css?v=20260819131753">
+<link rel="stylesheet" href="../assets/rota.css?v=20260819134203">
 </head>
 <body>
 <div class="backdrop" aria-hidden="true">
@@ -92,14 +92,15 @@
 
   <a class="section-up" href="#toc-h" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="egress">What leaves this phone</h2>
-  <p>Three things do leave, and you should know all three by name. Nothing else does.</p>
+  <p>Four things do leave, and you should know all four by name. Nothing else does.</p>
 
   <figure class="diagram diagram-egress">
-    <svg viewBox="0 0 720 330" role="img" aria-labelledby="eg-t eg-d">
-      <title id="eg-t">The three things that leave your device</title>
+    <svg viewBox="0 0 720 440" role="img" aria-labelledby="eg-t eg-d">
+      <title id="eg-t">The four things that leave your device</title>
       <desc id="eg-d">Your phone sends approximate location to Apple's weather service,
-        your collection to your own private iCloud, and RSS requests to publishers you
-        switch on. Nothing is sent to ROTA — we run no servers.</desc>
+        your collection to your own private iCloud, RSS requests to publishers you
+        switch on, and — only on tap — a currency pair to Frankfurter for the ECB's
+        daily rate. Nothing is sent to ROTA — we run no servers.</desc>
 
       <g class="dg-core">
         <rect x="16" y="115" width="168" height="100" rx="16"/>
@@ -108,9 +109,10 @@
       </g>
 
       <g class="dg-wire" fill="none">
-        <path d="M184 145 C 268 145, 300 58, 392 58"/>
-        <path d="M184 165 C 268 165, 300 165, 392 165"/>
-        <path d="M184 185 C 268 185, 300 272, 392 272"/>
+        <path d="M184 140 C 268 140, 300 58, 392 58"/>
+        <path d="M184 157 C 268 157, 300 165, 392 165"/>
+        <path d="M184 174 C 268 174, 300 272, 392 272"/>
+        <path d="M184 191 C 268 191, 300 379, 392 379"/>
       </g>
 
       <g class="dg-out">
@@ -123,15 +125,18 @@
         <g transform="translate(392,248)"><rect width="312" height="50" rx="14"/>
           <text x="16" y="21" class="dg-l">RSS requests</text>
           <text x="16" y="39" class="dg-sub">→ publishers you switch on</text></g>
+        <g transform="translate(392,355)"><rect width="312" height="50" rx="14"/>
+          <text x="16" y="21" class="dg-l">A currency pair, on tap</text>
+          <text x="16" y="39" class="dg-sub">→ Frankfurter, for the ECB daily rate</text></g>
       </g>
 
       <g class="dg-none">
-        <path d="M100 215 L 100 292" fill="none"/>
-        <g transform="translate(16,292)"><rect width="168" height="34" rx="17"/>
+        <path d="M100 215 L 100 399" fill="none"/>
+        <g transform="translate(16,399)"><rect width="168" height="34" rx="17"/>
           <text x="84" y="22">Nothing → ROTA</text></g>
       </g>
     </svg>
-    <figcaption>We operate no servers, so there is no fourth arrow.</figcaption>
+    <figcaption>We operate no servers, so no arrow points at us.</figcaption>
   </figure>
 
 </div>
@@ -196,6 +201,25 @@
         <dt>Who holds it</dt>
         <dd>The publisher, under their own privacy policy — the same as opening their site
           in Safari. Tapping a headline opens the publisher's page in a Safari view.</dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <h3>A currency question → Frankfurter</h3>
+      <dl>
+        <dt>Where it goes</dt>
+        <dd>Frankfurter, an open, keyless mirror of the European Central Bank's daily
+          reference rates.</dd>
+        <dt>What is sent</dt>
+        <dd>The currency pair — dollars to euros, or the reverse — and nothing else. No
+          amounts, no watches, no identifiers. Asked at most once a day, and only when you
+          tap a value in the app to convert it.</dd>
+        <dt>Why</dt>
+        <dd>It is how a price entered in one currency can be read in the other. Never tap a
+          value and nothing is ever asked.</dd>
+        <dt>Who holds it</dt>
+        <dd>Frankfurter's operator sees the request the way any website sees a visit: an IP
+          address and a currency pair. The rate itself is public ECB open data.</dd>
       </dl>
     </div>
 
@@ -397,7 +421,7 @@
     <p>This site sets no cookies, runs no scripts and carries no analytics.</p>
     <p>© 2026 ROTA. All rights reserved.</p>
   </div>
-  <p class="buildstamp"><span class="mono">built 2026-08-19 13:17 UTC</span></p>
+  <p class="buildstamp"><span class="mono">built 2026-08-19 13:42 UTC</span></p>
 </footer>
 
 </body>
