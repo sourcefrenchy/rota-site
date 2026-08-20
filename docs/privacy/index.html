@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — ROTA</title>
-<meta name="description" content="ROTA has no servers, no accounts, and no analytics — we never receive your data. Four things do leave your phone, and this page names all four.">
+<meta name="description" content="ROTA has no servers, no accounts, and no analytics — we never receive your data. Five things do leave your phone, and this page names all five.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#0E1512">
-<link rel="stylesheet" href="../assets/rota.css?v=20260819134203">
+<link rel="stylesheet" href="../assets/rota.css?v=20260820134101">
 </head>
 <body>
 <div class="backdrop" aria-hidden="true">
@@ -53,7 +53,7 @@
   <p class="eyebrow">Privacy policy</p>
   <h1>Your collection. Nobody's business.</h1>
   <p class="small">Applies to ROTA for iPhone and iPad, all versions.<br>
-    Effective 17 August 2026. Last updated 17 August 2026.</p>
+    Effective 17 August 2026. Last updated 20 August 2026.</p>
 
   <div class="claim">
     <p>ROTA has no servers, no accounts, and no analytics — we never receive your data.</p>
@@ -92,15 +92,17 @@
 
   <a class="section-up" href="#toc-h" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
   <h2 id="egress">What leaves this phone</h2>
-  <p>Four things do leave, and you should know all four by name. Nothing else does.</p>
+  <p>Five things do leave, and you should know all five by name. Nothing else does.</p>
 
   <figure class="diagram diagram-egress">
-    <svg viewBox="0 0 720 440" role="img" aria-labelledby="eg-t eg-d">
-      <title id="eg-t">The four things that leave your device</title>
+    <svg viewBox="0 0 720 547" role="img" aria-labelledby="eg-t eg-d">
+      <title id="eg-t">The five things that leave your device</title>
       <desc id="eg-d">Your phone sends approximate location to Apple's weather service,
         your collection to your own private iCloud, RSS requests to publishers you
-        switch on, and — only on tap — a currency pair to Frankfurter for the ECB's
-        daily rate. Nothing is sent to ROTA — we run no servers.</desc>
+        switch on, a currency pair — only on tap — to Frankfurter for the ECB's
+        daily rate, and — once, when you tap Fetch — a listing link you pasted back
+        to Chrono24 to prefill a watch. Nothing is sent to ROTA — we run no
+        servers.</desc>
 
       <g class="dg-core">
         <rect x="16" y="115" width="168" height="100" rx="16"/>
@@ -109,10 +111,11 @@
       </g>
 
       <g class="dg-wire" fill="none">
-        <path d="M184 140 C 268 140, 300 58, 392 58"/>
-        <path d="M184 157 C 268 157, 300 165, 392 165"/>
-        <path d="M184 174 C 268 174, 300 272, 392 272"/>
-        <path d="M184 191 C 268 191, 300 379, 392 379"/>
+        <path d="M184 137 C 268 137, 300 58, 392 58"/>
+        <path d="M184 152 C 268 152, 300 165, 392 165"/>
+        <path d="M184 167 C 268 167, 300 272, 392 272"/>
+        <path d="M184 182 C 268 182, 300 379, 392 379"/>
+        <path d="M184 197 C 268 197, 300 486, 392 486"/>
       </g>
 
       <g class="dg-out">
@@ -128,11 +131,14 @@
         <g transform="translate(392,355)"><rect width="312" height="50" rx="14"/>
           <text x="16" y="21" class="dg-l">A currency pair, on tap</text>
           <text x="16" y="39" class="dg-sub">→ Frankfurter, for the ECB daily rate</text></g>
+        <g transform="translate(392,462)"><rect width="312" height="50" rx="14"/>
+          <text x="16" y="21" class="dg-l">A pasted listing link, once</text>
+          <text x="16" y="39" class="dg-sub">→ Chrono24, to prefill a watch</text></g>
       </g>
 
       <g class="dg-none">
-        <path d="M100 215 L 100 399" fill="none"/>
-        <g transform="translate(16,399)"><rect width="168" height="34" rx="17"/>
+        <path d="M100 215 L 100 506" fill="none"/>
+        <g transform="translate(16,506)"><rect width="168" height="34" rx="17"/>
           <text x="84" y="22">Nothing → ROTA</text></g>
       </g>
     </svg>
@@ -220,6 +226,25 @@
         <dt>Who holds it</dt>
         <dd>Frankfurter's operator sees the request the way any website sees a visit: an IP
           address and a currency pair. The rate itself is public ECB open data.</dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <h3>A pasted listing link → Chrono24</h3>
+      <dl>
+        <dt>Where it goes</dt>
+        <dd>Chrono24, the site whose listing you pasted.</dd>
+        <dt>What is sent</dt>
+        <dd>The listing address you pasted — once, when you tap Fetch, over an ephemeral
+          session that keeps no cookies and no history. ROTA reads the listing's title,
+          specifications and picture from the page, and sends nothing else.</dd>
+        <dt>Why</dt>
+        <dd>It prefills the watch you are adding, so you type less. Never paste a link and
+          nothing is ever fetched; declining costs you nothing but typing.</dd>
+        <dt>Who holds it</dt>
+        <dd>Chrono24 sees the request the way it sees a visit in your browser — an IP
+          address and the listing's address — under its own privacy policy. It learns
+          nothing about your collection.</dd>
       </dl>
     </div>
 
@@ -392,7 +417,7 @@
   <h2 id="changes">Changes to this policy</h2>
   <p>If a future version of ROTA ever changes what leaves the device, this page changes
     first, the in-app manifesto with it, and the date at the top changes. The app enumerates
-    its egress points in code, and an automated test fails the build if a fourth is added
+    its egress points in code, and an automated test fails the build if a sixth is added
     without the copy naming it.</p>
 
   <a class="section-up" href="#changes" aria-label="Back to the previous section" title="Previous section"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M12 5.5l-6.2 6.2M12 5.5l6.2 6.2"/></svg></a>
@@ -421,7 +446,7 @@
     <p>This site sets no cookies, runs no scripts and carries no analytics.</p>
     <p>© 2026 ROTA. All rights reserved.</p>
   </div>
-  <p class="buildstamp"><span class="mono">built 2026-08-19 13:42 UTC</span></p>
+  <p class="buildstamp"><span class="mono">built 2026-08-20 13:41 UTC</span></p>
 </footer>
 
 </body>
